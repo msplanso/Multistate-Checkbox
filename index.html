@@ -2,146 +2,99 @@
 <html>
 	
 	<head>
-		<script
-		  src="https://code.jquery.com/jquery-3.3.1.js"
-		  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-		  crossorigin="anonymous">		  	
-		</script>
-		
-		
+				
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-		
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  		
 		<script type="text/javascript" src="mycheckbox.js"></script>
-		
-		<style>
-
-			
-		</style>
 	</head> 
 
-	<body>
-		
-		<h2>Checkbox</h2>
-		<input type="checkbox" class="preview-tristate"/>
-		<input type="checkbox" class="preview-tristate"/>
-		<input type="checkbox" class="preview"/>
-		<input type="checkbox" class="preview-tristate"/>
-		<input type="checkbox" class="preview_now"/>
-		<input type="checkbox" class="preview-tristate"/>
-		
+	<body>		
+		<h2>Multistate Checkbox</h2>
+		<div>
+			<h3>Four state checkbox</h3>
+			<input type="checkbox" class="four_state"/>
+		</div>
+		<div>
+			<h3>Five state checkbox</h3>
+			<input type="checkbox" class="five_state"/>
+		</div>
 	</body>
 	<script>
 		$(function() {
-			$('.preview-tristate').multistate({
-			/*states:[
-				{
-					value:'snailmail',
-					label: 'unchecked',
-					icon : 'fa fa-truck'
-				},
-				{
-					value:'half',
-					label: 'unchecked',
-					icon : 'fa fa-plus-square'
-				},
-				{
-					value:'yes',
-					label: 'checked',
-					icon : 'fa fa-check-square'
-				},
-				{
-					value:'email',
-					label: 'checked',
-					icon : 'fa fa-envelope-o'
-				}
-			],
+			$('.four_state').multistate({
+				states:[
+					{
+						value: 'snailmail',
+						label: 'unchecked',
+						icon : 'fa fa-truck'
+					},
+					{
+						value: 'half',
+						label: 'unchecked',
+						icon : 'fa fa-plus-square'
+					},
+					{
+						value: 'yes',
+						label: 'checked',
+						icon : 'fa fa-check-square'
+					},
+					{
+						value: 'email',
+						label: 'checked',
+						icon : 'fa fa-envelope-o'
+					}
+				],
+				
+	     			default_state :1,
+				color : '#0ff',
+				font_size: '22px'
+    			}).change(function(){
 			
-            default_state :1,
-			color : '#0ff',
-			font_size: '12px'*/
-        }).change(function(){
-			console.log( $(this).val() );
-		});
+			});
+
 		
-		$('.preview').multistate({
-			states:[
-				{
-					value:'snailmail',
-					label: 'unchecked',
-					icon : 'fas fa-ambulance'
-				},
-				{
-					value:'half',
-					label: 'unchecked',
-					icon : 'fas fa-plus-square'
-				},
-				{
-					value:'yes',
-					label: 'checked',
-					icon : 'fas fa-check-square'
-				},
-				{
-					value:'email',
-					label: 'checked',
-					icon : 'fas fa-envelope-square'
+			$('.five_state').multistate({
+				states:[
+					{
+						value: 'snailmail',
+						label: 'unchecked',
+						icon : 'fab fa-github-square'
+					},
+					{
+						value: 'half',
+						label: 'unchecked',
+						icon : 'fas fa-plus-square'
+					},
+					{
+						value: 'yes',
+						label: 'checked',
+						icon : 'fas fa-check-square'
+					},
+					{
+						value: 'email',
+						label: 'checked',
+						icon : 'fas fa-envelope-square'
+					},
+					{
+						value: 'facebook',
+						label: 'checked',
+						icon : 'fab fa-facebook-square'
+					}
+				],
+				
+	     			default_state :1,
+				margin_right:'25px',
+				color : '#80ff80',
+				font_size: '22px',
+				label:{
+					text:'Clikable label',
+					position:'right'
 				}
-			],
-			
-            default_state :1,
-			margin_right:'5px',
-		//	color : '#0ff',
-		//	font_size: '12px'
-			label:{
-				text:'Wie sollen wir schicken?',
-				position:'left'
-			}
-        }).change(function(){
-			console.log( $(this).val() );
+	   		}).change(function(){
+				
+			});
 		});
-		
-		$('.preview_now').multistate({
-			states:[
-				{
-					value:'snailmail',
-					label: 'unchecked',
-					icon : 'fab fa-github-square'
-				},
-				{
-					value:'half',
-					label: 'unchecked',
-					icon : 'fas fa-plus-square'
-				},
-				{
-					value:'yes',
-					label: 'checked',
-					icon : 'fas fa-check-square'
-				},
-				{
-					value:'email',
-					label: 'checked',
-					icon : 'fas fa-envelope-square'
-				},
-				{
-					value:'facebook',
-					label: 'checked',
-					icon : 'fab fa-facebook-square'
-				}
-			],
-			
-            default_state :1,
-			margin_right:'25px',
-		//	color : '#0ff',
-			font_size: '22px',
-			label:{
-				text:'Choose social',
-				position:'right'
-			}
-        }).change(function(){
-			console.log( $(this).val() );
-		});
-	});
 	</script>
 	
 </html>
